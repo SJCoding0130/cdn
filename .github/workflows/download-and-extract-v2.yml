@@ -145,10 +145,12 @@ jobs:
           git add Sprite\ui_frame_*.png
           git add Sprite\ui_icon_*.png
           git add Sprite\ui_banner_info*.jpg
-          git add Sprite\ui_banner_event*.jpg
+          git add Sprite\ui_banner_event_questbanner*.jpg
           git add Sprite\ui_banner_info*.webp
-          git add Sprite\ui_banner_event*.webp
+          git add Sprite\ui_banner_event_questbanner*.webp
           git add Sprite\skillTree_*.png
+
+          git restore --staged Sprite\ui_banner_gacha_*
 
           git commit -m "Auto-extract assets to artifacts"
           git push origin HEAD
