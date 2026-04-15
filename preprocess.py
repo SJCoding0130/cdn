@@ -71,10 +71,15 @@ def processMinify(f):
   bg.paste(im, (0, 0), im)
   bg.convert("RGB").save(f.replace(".png", ".jpg"), optimize=True)
 
+def processMinifyWebp(f):
+  print("minify webp:", f)
+  im = Image.open(f)
+  im.save(f.replace(".png", ".webp"), quality=80)
+
 if __name__ == '__main__':
   forAllCwd("MonoBehaviour", re.compile(r"fg_(\w+)\.json"), processAtlasJson)
   forAllCwd("MonoBehaviour", re.compile(r"\w+\.book\.json"), Book("book:", "importGridList"))
   forAllCwd("MonoBehaviour", re.compile(r"\w+\.chapter\.json"), Book("chapter:", "settingList"))
 
-  forAllCwd("Sprite", re.compile(r"^banner_.+\.png$"), processMinify)
-  forAllCwd("Sprite", re.compile(r"^ui_banner_.+\.png$"), processMinify)
+  forAllCwd("Sprite", re.compile(r"^banner_.+\.png$"), processMinifyWebp)
+  forAllCwd("Sprite", re.compile(r"^ui_banner_.+\.png$"), processMinifyWebp)

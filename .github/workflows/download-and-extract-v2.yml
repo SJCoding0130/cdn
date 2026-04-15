@@ -141,10 +141,13 @@ jobs:
           git add Sprite\b_skill*.png
           git add Sprite\status_*.png
           git add Sprite\banner_*.jpg
+          git add Sprite\banner_*.webp
           git add Sprite\ui_frame_*.png
           git add Sprite\ui_icon_*.png
           git add Sprite\ui_banner_info*.jpg
           git add Sprite\ui_banner_event*.jpg
+          git add Sprite\ui_banner_info*.webp
+          git add Sprite\ui_banner_event*.webp
           git add Sprite\skillTree_*.png
 
           git commit -m "Auto-extract assets to artifacts"
