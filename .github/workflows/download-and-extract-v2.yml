@@ -128,7 +128,10 @@ jobs:
           Copy-Item -Force -Recurse -Path ..\${env:ARTIFACTS_DIR}\MonoBehaviour\* -Destination .\MonoBehaviour\
           Move-Item -Force -Path ..\${env:ARTIFACTS_DIR}\Sprite\* -Destination .\Sprite\
           md -Force ..\${env:ARTIFACTS_RIPPER_DIR}\ExportedProject\Assets\Texture2D\
+          md -Force ..\${env:ARTIFACTS_RIPPER_DIR}\ExportedProject\Assets\Texture\Bromide\Sign\
+          md -Force .\Texture2D\Sign\
           Move-Item -Force -Path ..\${env:ARTIFACTS_RIPPER_DIR}\ExportedProject\Assets\Texture2D\* -Destination .\Texture2D\
+          Move-Item -Force -Path ..\${env:ARTIFACTS_RIPPER_DIR}\ExportedProject\Assets\Texture\Bromide\Sign\* -Destination .\Texture2D\Sign\
 
           git config --global user.name ${env:USER_NAME}
           git config --global user.email ${env:USER_EMAIL}
@@ -136,6 +139,7 @@ jobs:
           git add MonoBehaviour\fg_*.json
           git add Texture2D\fg_*.png
           git add Texture2D\tex_pixel*.png
+          git add Texture2D\Sign\sign_*.png
           git add Sprite\icon_*.png
           git add Sprite\item_*.png
           git add Sprite\b_skill*.png
